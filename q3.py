@@ -1,13 +1,20 @@
-num = list(map(int ,input("enter a number: ").split()))
 
-output = []
+int_arr = [1, 5, 7, -1]
+num = 6 #int( input("enter: "))
 
-for n in num:
-    if n > 500:
-        break
-    if n % 5 == 0:
-        output.append(n)
-    if n > 150:
-        continue
+k = []
+j = len(int_arr) - 1
+count = 0
 
-print(f"hte output is : {output}")
+for idx,  i in enumerate(int_arr):
+    compliment = num - i
+    if compliment in int_arr:
+        l1 = []
+        if ([compliment,i]) not in k:
+            l1.append(i)
+            l1.append(compliment)
+            k.append(l1)
+            count+=1
+
+print(k)
+print(count)

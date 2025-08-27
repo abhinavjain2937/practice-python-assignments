@@ -1,15 +1,24 @@
-num =int(input("enter your numbeer : "))
+num = [56,3,1,4,9,9,12,7]
+num.sort()
+m = int(input("enter: "))
+n = len(num)
+dic = {}
+count = []
 
 
-def count_num_char(x):
-    if x == 0:
-        return 1
-    count = 0
-    while x != 0:
-        x = x // 10
-        count += 1
-    return count
+j = 0
 
-output = count_num_char(num)
 
-print(output)
+while m < n:
+    l1 = list(num[j:m])
+    diff = max(l1)-min(l1)
+    count.append(diff)
+    dic[str(l1)] = diff
+    print(l1)
+    m+=1
+    j+=1
+
+print(f" the minimum differance is {min(count)}")
+print(dic)
+
+    

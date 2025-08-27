@@ -1,15 +1,22 @@
-def calculation():
+def int_to_roman(num):
+    val_to_roman = [
+        (1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'),
+        (100, 'C'), (90, 'XC'), (50, 'L'), (40, 'XL'),
+        (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')
+    ]
 
-    num = int(input("enter the number till you wana add: "))
-    sum_2 = 0
-    sum_1 = 2
-    for i in range(1, num+1):
+    result = ""
+    num = int(num)  # Convert string to integer
 
-        sum_2+=sum_1
-        sum_1 += 2 * 10**i
-        i+=1
-    return sum_2
+    for val, roman in val_to_roman:
+        while num >= val:
+            result += roman
+            num -= val
 
-output = calculation()
-print(output)
+    return result
+
+# Example usage
+num = '5268'
+print(int_to_roman(num))  # Output: MMDCCLXVIII
+
 
