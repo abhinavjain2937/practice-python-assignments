@@ -1,6 +1,6 @@
 
 
-# Definition
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -22,5 +22,7 @@ def find_middle_node(head: ListNode) -> ListNode:
 
 list1 = ListNode(2, ListNode(3, ListNode(4, ListNode(5))))
 middle1 = find_middle_node(list1)
+print("start")
 print(f"Test Case 1 : The middle element is {middle1.val}")
+
 
